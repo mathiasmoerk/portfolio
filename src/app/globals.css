@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/*
+  Design system — light, editorial, mono-accent.
+  Direction pulled from the moodboard sticky notes:
+  light color pattern, clear structure, multi-color category chips,
+  high-saturation thumbnails with depth, Apple-style cards.
+*/
+
+@theme inline {
+  --color-paper: #faf9f5;
+  --color-paper-2: #f1efe7;
+  --color-card: #ffffff;
+  --color-ink: #18160f;
+  --color-ink-soft: #46423a;
+  --color-muted: #908b7e;
+  --color-line: #e8e4d9;
+  --color-line-strong: #d9d4c6;
+
+  /* Brand CTA accent — vibrant purple */
+  --color-accent: #6232e6;
+  --color-accent-strong: #4f25c9;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --shadow-card: 0 1px 2px rgba(24, 22, 15, 0.04), 0 8px 24px -12px rgba(24, 22, 15, 0.18);
+  --shadow-lift: 0 2px 4px rgba(24, 22, 15, 0.05), 0 24px 48px -20px rgba(24, 22, 15, 0.28);
+}
+
+:root {
+  --background: #faf9f5;
+  --foreground: #18160f;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Editorial display type: tight tracking, balanced wrapping */
+.display {
+  font-feature-settings: "ss01", "cv01";
+  letter-spacing: -0.03em;
+  line-height: 0.96;
+  text-wrap: balance;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: var(--color-muted);
+}
+
+/* Hairline that reads as an editorial rule */
+.rule {
+  border-top: 1px solid var(--color-line);
+}
+
+/* Subtle paper grain so large light areas don't feel flat */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(24, 22, 15, 0.025) 1px, transparent 1px);
+  background-size: 4px 4px;
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Material-style menu pop, growing from the FAB corner */
+.menu-pop {
+  animation: menu-pop 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes menu-pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+::selection {
+  background: #ffe27a;
+  color: #18160f;
+}
