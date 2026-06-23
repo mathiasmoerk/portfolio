@@ -22,6 +22,13 @@ export type Figure = {
   caption?: string;
 };
 
+export type Embed = {
+  kind: "instagram";
+  url: string; // the post/reel permalink
+  heading?: string;
+  caption?: string;
+};
+
 export type CaseStudy = {
   /** One-line framing shown under the title. */
   lead: string;
@@ -31,20 +38,28 @@ export type CaseStudy = {
   problem?: string;
   /** Cover image at the top of the case study. */
   cover: Figure;
-  features: { title: string; body: string }[];
+  /** Key features / deliverables block. */
+  features?: { title: string; body: string }[];
+  featuresHeading?: string;
+  featuresLead?: string;
   /** Closing note on method / validation. */
   method?: string;
   /** Supporting screenshots. */
   gallery: Figure[];
   facts: { label: string; value: string }[];
-  /** Research process — sequential phases / studies. */
+  /** Process — sequential phases / studies / workstreams. */
   process?: { phase: string; title: string; body: string }[];
+  processHeading?: string;
+  processLead?: string;
   /** Headline results / numbers. */
   metrics?: { value: string; label: string }[];
   /** Named design principles the work was grounded in. */
   principles?: { name: string; note: string }[];
+  principlesHeading?: string;
   /** A representative user quote. */
   quote?: { text: string; author: string };
+  /** An embedded social post (e.g. an Instagram reel the designer features in). */
+  embed?: Embed;
   /** Honest reflection / next steps. */
   reflection?: { intro: string; points: string[] };
 };
@@ -253,19 +268,130 @@ export const projects: Project[] = [
   },
   {
     id: "project-two",
-    slug: "project-two",
+    slug: "mobilepay",
     index: "02",
-    title: "Project Two", // TODO: real project — details coming
+    title: "Designing trust into a payments app",
+    client: "Vipps MobilePay",
     year: "2024",
-    role: "Product Designer",
+    role: "UX Design Intern",
     summary:
-      "A short, punchy one-liner on the outcome — what shipped and why it mattered. Full case study coming soon.",
+      "A nine-week UX internship on the MobilePay app — shipping toward the Wishlists launch, redesigning the profile into a personal hub, and stress-testing Tap & Go with the Nordic design team.",
     chips: [
-      { label: "Web App", color: "orange" },
-      { label: "0 → 1", color: "pink" },
-      { label: "Research", color: "amber" },
+      { label: "UX Design", color: "violet" },
+      { label: "Mobile App", color: "blue" },
+      { label: "User Research", color: "green" },
+      { label: "Figma", color: "orange" },
     ],
-    thumb: { variant: "browser", from: "#ff7a59", to: "#ff3d81", accent: "#1d1b16" },
+    cover: "/projects/p2-cover.png",
+    thumb: { variant: "phone", from: "#5a78ff", to: "#3b32d6", accent: "#ffffff" },
+    caseStudy: {
+      lead: "A nine-week UX internship on MobilePay — from a flagship feature launch to a cross-city research workshop and a set of high-stakes fixes.",
+      intro:
+        "MobilePay is the app Danes reach for to move money — and, as Vipps, the same service across Norway, Sweden and Finland after the Nordic merger. I joined the design team as a UX intern with one ambition: take real work from idea toward production on a product millions of people trust with their money. I ran insight sessions and user tests, shipped prototypes in Figma, and worked across disciplines and borders with the wider design team.",
+      problem:
+        "MobilePay's feature set was outgrowing its navigation. As Wishlists and Tap & Go arrived, how could the app absorb new features without losing the clarity people trust it for?",
+      facts: [
+        { label: "Partner", value: "Vipps MobilePay" },
+        { label: "Role", value: "UX Design Intern" },
+        { label: "Period", value: "Aug — Oct 2024" },
+        { label: "Scope", value: "Features & research" },
+      ],
+      processHeading: "Three projects, idea toward production.",
+      processLead:
+        "I had the freedom to shape my own scope — which spanned a flagship feature, a cross-city research workshop, and a set of high-stakes refinements.",
+      process: [
+        {
+          phase: "Project 01",
+          title: "Wishlists & the “Me” page",
+          body: "Designed a home-screen entry that lets users create a wish in as few taps as possible, and reframed the cluttered Profile into a personalised “Me” hub of user-controlled widgets — absorbing new features without removing anything. Shipped toward the November 2024 Wishlists launch, timed before Christmas to maximise onboarding.",
+        },
+        {
+          phase: "Project 02",
+          title: "Tap & Go evaluation workshop",
+          body: "Co-facilitated expert-evaluation workshops (Nielsen & Molich) in Aarhus and Copenhagen with UX Unite, evaluating the in-development Tap & Go NFC wallet — MobilePay's answer to Apple Pay, unlocked when the EU forced Apple to open its NFC chip. Groups scored key screens in FigJam across Usability, Discoverability, Value and Aesthetics, against a clickable Figma prototype.",
+        },
+        {
+          phase: "Project 03",
+          title: "High-stakes refinements",
+          body: "Redesigned recipient search in the Send flow after a business was mistakenly sent 18,000 kr in a single weekend — users couldn't tell a company from a person. Using Gestalt principles, I clarified what each result represents. I also made cross-border Groups surface currency-conversion fees clearly, before a transfer is sent.",
+        },
+      ],
+      metrics: [
+        { value: "9 wks", label: "Internship · 2024" },
+        { value: "Nov 2024", label: "Wishlists shipped" },
+        { value: "2", label: "Workshop cities" },
+        { value: "4", label: "Markets — DK·NO·SE·FI" },
+      ],
+      principlesHeading: "Methods I brought to the work.",
+      principles: [
+        {
+          name: "Heuristic / expert evaluation",
+          note: "Nielsen & Molich, run as a facilitated group workshop.",
+        },
+        {
+          name: "Gestalt principles",
+          note: "Clarified high-risk search and fee moments.",
+        },
+        {
+          name: "Information architecture",
+          note: "Re-housed features without removing any.",
+        },
+        {
+          name: "Personalisation",
+          note: "A configurable “Me” hub the user controls.",
+        },
+        {
+          name: "Figma & FigJam",
+          note: "Prototypes for both user tests and stakeholder buy-in.",
+        },
+      ],
+      embed: {
+        kind: "instagram",
+        url: "https://www.instagram.com/reel/DAikOgrMUMF/",
+        heading: "From the internship",
+        caption: "A reel from my time at Vipps MobilePay — I'm featured in it.",
+      },
+      reflection: {
+        intro:
+          "My biggest takeaway was designing under real business constraints.",
+        points: [
+          "The hardest brief — add features to the navigation without removing any — pushed me deep into information architecture and creative prioritisation.",
+          "With dev resources tight, much of my work lives on as ready-to-build proposals — a realistic look at how product teams actually sequence work.",
+          "Working across Danish and Norwegian teams showed me how much the written word carries in a financial UI, especially around fees and trust.",
+        ],
+      },
+      cover: {
+        src: "/projects/p2-cover.png",
+        alt: "MobilePay — UX design",
+      },
+      gallery: [
+        {
+          src: "/projects/p2-overview.webp",
+          alt: "Overview of redesigned MobilePay screens",
+          caption: "A spread of the screens I worked on across the internship.",
+        },
+        {
+          src: "/projects/p2-me.webp",
+          alt: "Profile page redesigned into a personalised Me hub",
+          caption: "Current vs. proposed — the cluttered Profile becomes a personal “Me” hub.",
+        },
+        {
+          src: "/projects/p2-search.webp",
+          alt: "Redesigned recipient search in the Send flow",
+          caption: "Recipient search, redesigned to make clear who you're sending to.",
+        },
+        {
+          src: "/projects/p2-crossborder.png",
+          alt: "Cross-border settlement showing currency conversion fee",
+          caption: "Cross-border Groups surface the currency-conversion fee before sending.",
+        },
+        {
+          src: "/projects/p2-me-detail.webp",
+          alt: "Personalised Me hub with stats, cards and accounts",
+          caption: "The “Me” hub — stats, cards and shortcuts the user can arrange.",
+        },
+      ],
+    },
   },
   {
     id: "project-three",

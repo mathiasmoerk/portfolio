@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Chip from "@/components/Chip";
 import ProjectMedia from "@/components/ProjectMedia";
+import InstagramEmbed from "@/components/InstagramEmbed";
 import { projects } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -122,16 +123,16 @@ export default async function CaseStudyPage({
           <Figure figure={cs.gallery[0]} wide />
         )}
 
-        {/* Research method — the 5 studies */}
+        {/* Process — studies / workstreams */}
         {cs.process && (
           <section className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
-            <p className="eyebrow">Research method</p>
+            <p className="eyebrow">Process</p>
             <h2 className="display mt-4 text-[clamp(1.9rem,4.5vw,3rem)] font-semibold">
-              Five studies, each feeding the next.
+              {cs.processHeading ?? "Five studies, each feeding the next."}
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft">
-              A mixed-methods approach where each study built on the last — so
-              decisions stayed grounded in real behaviour, not assumptions.
+              {cs.processLead ??
+                "A mixed-methods approach where each study built on the last — so decisions stayed grounded in real behaviour, not assumptions."}
             </p>
 
             <ol className="mt-12 space-y-px overflow-hidden rounded-3xl border border-line bg-line">
@@ -181,14 +182,15 @@ export default async function CaseStudyPage({
         )}
 
         {/* Key features */}
+        {cs.features && (
         <section className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
           <p className="eyebrow">Key features</p>
           <h2 className="display mt-4 text-[clamp(1.9rem,4.5vw,3rem)] font-semibold">
-            Collaboration, woven into the catalog.
+            {cs.featuresHeading ?? "Collaboration, woven into the catalog."}
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft">
-            A high-fidelity prototype layering community features onto familiar
-            workflows.
+            {cs.featuresLead ??
+              "A high-fidelity prototype layering community features onto familiar workflows."}
           </p>
 
           <ol className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2">
@@ -207,13 +209,14 @@ export default async function CaseStudyPage({
             ))}
           </ol>
         </section>
+        )}
 
         {/* Grounded in — design principles */}
         {cs.principles && (
           <section className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
             <p className="eyebrow">Grounded in</p>
             <h2 className="display mt-4 text-[clamp(1.9rem,4.5vw,3rem)] font-semibold">
-              Decisions backed by principle.
+              {cs.principlesHeading ?? "Decisions backed by principle."}
             </h2>
             <ul className="mt-10 divide-y divide-line border-y border-line">
               {cs.principles.map((p) => (
@@ -239,6 +242,21 @@ export default async function CaseStudyPage({
             ))}
           </div>
         </section>
+
+        {/* Embedded social post (e.g. Instagram reel) */}
+        {cs.embed && cs.embed.kind === "instagram" && (
+          <section className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
+            <p className="eyebrow">{cs.embed.heading ?? "Featured"}</p>
+            {cs.embed.caption && (
+              <p className="display mt-4 max-w-2xl text-[clamp(1.5rem,3.2vw,2.25rem)] font-medium leading-[1.2] tracking-tight">
+                {cs.embed.caption}
+              </p>
+            )}
+            <div className="mt-10">
+              <InstagramEmbed url={cs.embed.url} title={cs.embed.caption} />
+            </div>
+          </section>
+        )}
 
         {/* User quote */}
         {cs.quote && (
