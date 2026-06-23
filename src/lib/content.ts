@@ -395,18 +395,100 @@ export const projects: Project[] = [
   },
   {
     id: "project-three",
-    slug: "project-three",
+    slug: "lego-builder",
     index: "03",
-    title: "Project Three", // TODO: real project — details coming
-    year: "2024",
-    role: "Product Designer",
+    title: "A new world of building",
+    client: "The LEGO Group",
+    year: "2025",
+    role: "Digital Product Design Student Worker",
     summary:
-      "A short, punchy one-liner on the outcome — what shipped and why it mattered. Full case study coming soon.",
+      "Helping shape the LEGO Builder app — LEGO's digital companion for building, exploring and co-creating — including the real-time Build Together experience.",
     chips: [
-      { label: "Branding", color: "green" },
-      { label: "Marketing Site", color: "blue" },
+      { label: "Product Design", color: "violet" },
+      { label: "iOS & iPad", color: "blue" },
+      { label: "Prototyping", color: "green" },
+      { label: "Figma", color: "orange" },
     ],
-    thumb: { variant: "cards", from: "#10b981", to: "#0ea5e9", accent: "#ffe27a" },
+    cover: "/projects/p3-cover.png",
+    thumb: { variant: "phone", from: "#ffd02e", to: "#f5a623", accent: "#6b3fa0" },
+    caseStudy: {
+      lead: "Helping shape LEGO's digital companion for building, exploring and co-creating — including the real-time Build Together experience.",
+      intro:
+        "During my time as a Digital Product Design Student Worker at LEGO, I had the joy of helping shape the LEGO Builder app — LEGO's digital companion for building, exploring and co-creating. Working alongside product managers, engineers and fellow creatives, I took ownership of design tasks across the full UX spectrum: planning and facilitating workshops, creating wireframes, prototypes and UI visuals in Figma, and transforming user research into design decisions that made building instructions smarter, smoother and more social. In short: I helped make digital building feel just as magical as snapping bricks together in real life — one iteration at a time.",
+      problem:
+        "How do you make building with digital instructions feel as magical — and as social — as snapping bricks together on the living-room floor?",
+      facts: [
+        { label: "Partner", value: "The LEGO Group" },
+        { label: "Role", value: "Product Design (Student)" },
+        { label: "Period", value: "2024 — 2025" },
+        { label: "Team", value: "LEGO Builder app" },
+      ],
+      featuresHeading: "What I helped build.",
+      featuresLead:
+        "Across the full UX spectrum — from workshops and research to pixel-tight UI in Figma.",
+      features: [
+        {
+          title: "Build Together",
+          body: "Splits a set's instructions into parallel “builder roles” so families and friends construct the same model at once — each on their own device, perfectly in sync. Shared flow, playful teamwork, intuitive coordination.",
+        },
+        {
+          title: "Smarter building instructions",
+          body: "Clearer, step-by-step 3D guidance that makes following along smoother — so the digital build feels as satisfying as the physical one.",
+        },
+        {
+          title: "Browse & discover",
+          body: "A themed home and set pages — LEGO City, Architecture, Botanicals and more — that make finding your next build effortless.",
+        },
+        {
+          title: "End-to-end UX",
+          body: "Workshops, wireframes, prototypes and UI in Figma — turning user research into design decisions that shipped.",
+        },
+      ],
+      quote: {
+        text: "I helped make digital building feel just as magical as snapping bricks together in real life — one iteration at a time.",
+        author: "On shaping the LEGO Builder app",
+      },
+      reflection: {
+        intro:
+          "Designing for LEGO meant designing for play — for everyone from a five-year-old to a parent.",
+        points: [
+          "Build Together reframed building as a shared moment: multiple people, multiple devices, one synchronised flow — coordination as a UX problem.",
+          "Working inside a beloved brand showed me how much craft and consistency matter when expectations are this high.",
+          "I grew comfortable moving from research to workshops to pixel-tight UI inside a large, cross-functional product org.",
+        ],
+      },
+      cover: {
+        src: "/projects/p3-cover.png",
+        alt: "LEGO Builder app",
+      },
+      gallery: [
+        {
+          src: "/projects/p3-overview.jpg",
+          alt: "Overview of LEGO Builder app screens",
+          caption: "A spread of the LEGO Builder app I helped shape.",
+        },
+        {
+          src: "/projects/p3-home.jpg",
+          alt: "LEGO Builder home on iPhone and iPad",
+          caption: "The Builder home — themed sets and Build Together, across iPhone and iPad.",
+        },
+        {
+          src: "/projects/p3-browse.jpg",
+          alt: "Browsing and discovering LEGO sets by theme",
+          caption: "Browsing and discovering sets by theme, down to each set's page.",
+        },
+        {
+          src: "/projects/p3-building.jpg",
+          alt: "Step-by-step 3D building instructions",
+          caption: "Following smarter, step-by-step 3D building instructions.",
+        },
+        {
+          src: "/projects/p3-buildtogether.jpg",
+          alt: "Build Together split building roles in sync",
+          caption: "Build Together — parallel builder roles, kept perfectly in sync.",
+        },
+      ],
+    },
   },
 ];
 
