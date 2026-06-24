@@ -130,6 +130,8 @@ export const profile = {
   name: site.name,
   handle: "@mathiasmoerk",
   role: site.role,
+  location: "Denmark",
+  years: "5+ years",
   avatar: "/projects/mathias.jpg",
   bio: "I'm a product designer who turns complex flows into intuitive, pixel-perfect products. I work end to end: research, prototyping, and UI. Recently at Trifork, and before that LEGO, Vipps MobilePay, and Hesehus.",
   actions: [

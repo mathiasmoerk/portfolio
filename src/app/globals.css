@@ -1,36 +1,36 @@
 @import "tailwindcss";
 
 /*
-  Design system - light, editorial, mono-accent.
-  Direction pulled from the moodboard sticky notes:
-  light color pattern, clear structure, multi-color category chips,
-  high-saturation thumbnails with depth, Apple-style cards.
+  Design system - white/grey minimal with Inter, modelled on the reference
+  portfolio (wallofportfolios). Purple kept as the single brand accent.
+  Greys: grey400 #1A1A1A · grey300 #333 · grey200 #6C6B77 · grey75 #E7E7E9
+         · grey50 #F7F7F7.
 */
 
 @theme inline {
-  --color-paper: #faf9f5;
-  --color-paper-2: #f1efe7;
+  --color-paper: #ffffff;
+  --color-paper-2: #f7f7f7;
   --color-card: #ffffff;
-  --color-ink: #18160f;
-  --color-ink-soft: #46423a;
-  --color-muted: #908b7e;
-  --color-line: #e8e4d9;
-  --color-line-strong: #d9d4c6;
+  --color-ink: #1a1a1a;
+  --color-ink-soft: #333333;
+  --color-muted: #6c6b77;
+  --color-line: #e7e7e9;
+  --color-line-strong: #d9d9dd;
 
   /* Brand CTA accent - vibrant purple */
   --color-accent: #6232e6;
   --color-accent-strong: #4f25c9;
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-inter);
 
-  --shadow-card: 0 1px 2px rgba(24, 22, 15, 0.04), 0 8px 24px -12px rgba(24, 22, 15, 0.18);
-  --shadow-lift: 0 2px 4px rgba(24, 22, 15, 0.05), 0 24px 48px -20px rgba(24, 22, 15, 0.28);
+  --shadow-card: 0 1px 2px rgba(13, 12, 32, 0.04), 0 8px 24px -12px rgba(13, 12, 32, 0.12);
+  --shadow-lift: 0 2px 4px rgba(13, 12, 32, 0.05), 0 24px 48px -20px rgba(13, 12, 32, 0.2);
 }
 
 :root {
-  --background: #faf9f5;
-  --foreground: #18160f;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
 }
 
 html {
@@ -55,9 +55,10 @@ body {
 }
 
 .eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   font-size: 0.72rem;
   color: var(--color-muted);
 }
@@ -112,6 +113,6 @@ body {
 }
 
 ::selection {
-  background: #ffe27a;
-  color: #18160f;
+  background: #e3dbff;
+  color: #1a1a1a;
 }
