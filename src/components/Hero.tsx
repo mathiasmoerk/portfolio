@@ -48,19 +48,13 @@ export default function Hero() {
                   alt={hero.portrait.name}
                 />
               </div>
-              <div className="flex items-center justify-between gap-3 border-t border-line bg-card px-5 py-4">
-                <div>
-                  <p className="font-semibold tracking-tight">
-                    {hero.portrait.name}
-                  </p>
-                  <p className="font-mono text-xs uppercase tracking-widest text-muted">
-                    {hero.portrait.role}
-                  </p>
-                </div>
-                <span className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-widest text-accent">
-                  <span className="size-2 rounded-full bg-accent" />
-                  Denmark
-                </span>
+              <div className="border-t border-line bg-card px-5 py-4">
+                <p className="font-semibold tracking-tight">
+                  {hero.portrait.name}
+                </p>
+                <p className="font-mono text-xs uppercase tracking-widest text-muted">
+                  {hero.portrait.role}
+                </p>
               </div>
             </div>
           </div>
