@@ -31,15 +31,10 @@ export default function Header() {
             : "border-b border-transparent"
         }`}
       >
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-          <a
-            href="#top"
-            className="group flex items-center gap-2.5 font-mono text-sm tracking-tight"
-          >
-            <span className="grid size-7 place-items-center rounded-md bg-ink text-[11px] font-medium text-paper">
-              {site.initials}
-            </span>
-            <span className="font-medium">{site.name}</span>
+        <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5 sm:px-8">
+          <a href="#top" aria-label={site.name} className="flex items-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.png" alt={site.name} className="h-7 w-auto" />
           </a>
 
           <nav className="hidden items-center gap-1 sm:flex">
@@ -54,7 +49,7 @@ export default function Header() {
             ))}
             <a
               href="#contact"
-              className="ml-2 rounded-full bg-accent px-4 py-2 font-mono text-xs uppercase tracking-widest text-white transition-all hover:-translate-y-0.5 hover:bg-accent-strong"
+              className="ml-2 inline-flex min-h-16 items-center justify-center rounded-full bg-accent px-7 font-mono text-xs uppercase tracking-widest text-white transition-all hover:-translate-y-0.5 hover:bg-accent-strong"
             >
               Get in touch
             </a>
@@ -75,14 +70,14 @@ export default function Header() {
 
         {/* Menu surface, anchored above the FAB */}
         {open && (
-          <div className="menu-pop fixed bottom-[6.5rem] right-5 z-50 w-60 origin-bottom-right overflow-hidden rounded-3xl border border-line bg-card p-2 shadow-[var(--shadow-lift)]">
-            <nav className="flex flex-col">
+          <div className="menu-pop fixed bottom-28 right-5 z-50 w-80 max-w-[calc(100vw-2.5rem)] origin-bottom-right overflow-hidden rounded-3xl border border-line bg-card p-3 shadow-[var(--shadow-lift)]">
+            <nav className="flex flex-col gap-1">
               {site.nav.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-2xl px-4 py-3 font-mono text-sm uppercase tracking-widest text-ink-soft transition-colors hover:bg-paper-2 hover:text-ink"
+                  className="flex min-h-16 items-center rounded-2xl px-5 font-mono text-base uppercase tracking-widest text-ink-soft transition-colors hover:bg-paper-2 hover:text-ink"
                 >
                   {item.label}
                 </a>
@@ -90,7 +85,7 @@ export default function Header() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="mt-1 rounded-2xl bg-accent px-4 py-3 text-center font-mono text-sm uppercase tracking-widest text-white"
+                className="mt-1 flex min-h-16 items-center justify-center rounded-2xl bg-accent px-5 text-center font-mono text-base uppercase tracking-widest text-white"
               >
                 Get in touch
               </a>
@@ -98,7 +93,7 @@ export default function Header() {
           </div>
         )}
 
-        {/* The FAB itself — 64px, bottom-right */}
+        {/* The FAB itself - 64px, bottom-right */}
         <button
           type="button"
           aria-label="Toggle menu"

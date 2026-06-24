@@ -10,7 +10,7 @@ export default function About() {
         <p className="eyebrow">About</p>
 
         <div className="mt-6 grid gap-12 lg:grid-cols-12 lg:gap-16">
-          {/* Philosophy — the editorial centerpiece */}
+          {/* Philosophy - the editorial centerpiece */}
           <div className="lg:col-span-7">
             <h2 className="display text-[clamp(1.9rem,4.5vw,3rem)] font-medium leading-[1.1] tracking-tight">
               {about.philosophy[0]}
@@ -79,7 +79,7 @@ export default function About() {
 
               <a
                 href={`mailto:${site.email}`}
-                className="mt-8 block rounded-full bg-accent px-5 py-3 text-center font-mono text-xs uppercase tracking-widest text-white transition-all hover:-translate-y-0.5 hover:bg-accent-strong"
+                className="mt-8 flex min-h-16 items-center justify-center rounded-full bg-accent px-5 text-center font-mono text-xs uppercase tracking-widest text-white transition-all hover:-translate-y-0.5 hover:bg-accent-strong"
               >
                 Let&apos;s work together
               </a>

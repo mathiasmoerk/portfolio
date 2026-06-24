@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
-  Design system — light, editorial, mono-accent.
+  Design system - light, editorial, mono-accent.
   Direction pulled from the moodboard sticky notes:
   light color pattern, clear structure, multi-color category chips,
   high-saturation thumbnails with depth, Apple-style cards.
@@ -17,7 +17,7 @@
   --color-line: #e8e4d9;
   --color-line-strong: #d9d4c6;
 
-  /* Brand CTA accent — vibrant purple */
+  /* Brand CTA accent - vibrant purple */
   --color-accent: #6232e6;
   --color-accent-strong: #4f25c9;
 

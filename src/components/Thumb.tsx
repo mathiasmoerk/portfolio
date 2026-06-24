@@ -1,7 +1,7 @@
 import type { Project } from "@/lib/content";
 
 /*
-  Generative project thumbnails — no photography required.
+  Generative project thumbnails - no photography required.
   Moodboard cues: "thumbnails with depth and eye catching colours due to high
   saturation and contrast" + "Apple style cards carousel with device mockups".
   Each variant floats a device/UI mock on a vivid gradient with soft depth.

@@ -18,7 +18,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       <div className="overflow-hidden">
         <div className="transition-transform duration-500 group-hover:scale-[1.03]">
           {project.cover ? (
-            <div className="aspect-[4/3] w-full">
+            <div className="aspect-video w-full">
               <ProjectMedia
                 src={project.cover}
                 alt={project.title}

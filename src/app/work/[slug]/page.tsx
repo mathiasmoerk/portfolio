@@ -22,7 +22,7 @@ export async function generateMetadata({
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
   return {
-    title: `${project.title} — Mathias Mørk`,
+    title: `${project.title} - Mathias Mørk`,
     description: project.summary,
   };
 }
@@ -56,7 +56,7 @@ export default async function CaseStudyPage({
           </a>
 
           <p className="eyebrow mt-8">
-            {project.index} — {project.client ?? project.role} · {project.year}
+            {project.index} - {project.client ?? project.role} · {project.year}
           </p>
 
           <h1 className="display mt-4 text-[clamp(2.25rem,6vw,4.25rem)] font-semibold">
@@ -123,7 +123,7 @@ export default async function CaseStudyPage({
           <Figure figure={cs.gallery[0]} wide />
         )}
 
-        {/* Process — studies / workstreams */}
+        {/* Process - studies / workstreams */}
         {cs.process && (
           <section className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
             <p className="eyebrow">Process</p>
@@ -132,7 +132,7 @@ export default async function CaseStudyPage({
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft">
               {cs.processLead ??
-                "A mixed-methods approach where each study built on the last — so decisions stayed grounded in real behaviour, not assumptions."}
+                "A mixed-methods approach where each study built on the last - so decisions stayed grounded in real behaviour, not assumptions."}
             </p>
 
             <ol className="mt-12 space-y-px overflow-hidden rounded-3xl border border-line bg-line">
@@ -211,7 +211,7 @@ export default async function CaseStudyPage({
         </section>
         )}
 
-        {/* Grounded in — design principles */}
+        {/* Grounded in - design principles */}
         {cs.principles && (
           <section className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
             <p className="eyebrow">Grounded in</p>

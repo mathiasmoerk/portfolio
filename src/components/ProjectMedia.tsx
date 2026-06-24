@@ -4,7 +4,7 @@ import { useState } from "react";
 
 /*
   Loads a real screenshot from /public. While the file is missing it renders a
-  fallback — either a passed-in node (the generative Thumb on cards) or a
+  fallback - either a passed-in node (the generative Thumb on cards) or a
   tasteful labeled placeholder (in the case study), so the layout always looks
   intentional before the assets land.
 */

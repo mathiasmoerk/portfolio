@@ -19,7 +19,7 @@ export default function Footer() {
           <div>
             <p className="font-mono text-sm text-paper/60">{site.email}</p>
             <p className="mt-1 font-mono text-xs uppercase tracking-widest text-paper/40">
-              {site.name} — {site.role}
+              {site.name} - {site.role}
             </p>
           </div>
 
@@ -28,7 +28,7 @@ export default function Footer() {
               <a
                 key={s.label}
                 href={s.href}
-                className="rounded-full border border-paper/20 px-4 py-2 font-mono text-xs uppercase tracking-widest text-paper/80 transition-colors hover:border-accent hover:bg-accent hover:text-white"
+                className="inline-flex min-h-16 items-center rounded-full border border-paper/20 px-6 font-mono text-xs uppercase tracking-widest text-paper/80 transition-colors hover:border-accent hover:bg-accent hover:text-white"
               >
                 {s.label}
               </a>

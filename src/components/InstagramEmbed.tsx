@@ -1,6 +1,6 @@
 /*
   Lightweight Instagram embed via the official /embed iframe endpoint.
-  No external script needed — the iframe renders the post standalone.
+  No external script needed - the iframe renders the post standalone.
 */
 export default function InstagramEmbed({
   url,
