@@ -6,12 +6,12 @@ export default function About() {
       id="about"
       className="border-t border-line bg-paper-2/40"
     >
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+      <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20">
         <p className="eyebrow">About</p>
 
-        <div className="mt-6 grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="mt-6">
           {/* Philosophy - the editorial centerpiece */}
-          <div className="lg:col-span-7">
+          <div>
             <h2 className="display text-[clamp(1.9rem,4.5vw,3rem)] font-medium leading-[1.1] tracking-tight">
               {about.philosophy[0]}
             </h2>
@@ -35,7 +35,7 @@ export default function About() {
           </div>
 
           {/* Experience + Education */}
-          <div className="lg:col-span-5">
+          <div className="mt-10">
             <div className="rounded-3xl border border-line bg-card p-6 shadow-[var(--shadow-card)] sm:p-8">
               <h3 className="font-mono text-xs uppercase tracking-widest text-muted">
                 Experience

@@ -125,6 +125,28 @@ export const hero = {
   },
 };
 
+// Profile-card header (wallofportfolios-style layout).
+export const profile = {
+  name: site.name,
+  handle: "@mathiasmoerk",
+  role: site.role,
+  avatar: "/projects/mathias.jpg",
+  bio: "I'm a product designer who turns complex flows into intuitive, pixel-perfect products. I work end to end: research, prototyping, and UI. Recently at Trifork, and before that LEGO, Vipps MobilePay, and Hesehus.",
+  actions: [
+    { label: "Get in touch", href: "#contact", primary: true },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/mathias-mørk-541b09145" },
+  ],
+};
+
+// "Worked with" — logo files dropped into /public/companies (falls back to a
+// styled text wordmark until the real logo is added).
+export const companies: { name: string; logo: string }[] = [
+  { name: "Trifork", logo: "/companies/trifork.png" },
+  { name: "LEGO", logo: "/companies/lego.png" },
+  { name: "Vipps MobilePay", logo: "/companies/vipps.png" },
+  { name: "Hesehus", logo: "/companies/hesehus.png" },
+];
+
 export const projects: Project[] = [
   {
     id: "project-one",
