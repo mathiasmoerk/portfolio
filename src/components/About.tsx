@@ -36,7 +36,7 @@ export default function About() {
 
           {/* Experience + Education */}
           <div className="mt-10">
-            <div className="border border-line bg-card p-6 shadow-[var(--shadow-card)] sm:p-8">
+            <div className="rounded-3xl border border-line bg-card p-6 shadow-[var(--shadow-card)] sm:p-8">
               <h3 className="font-mono text-xs uppercase tracking-widest text-muted">
                 Experience
               </h3>
@@ -79,7 +79,7 @@ export default function About() {
 
               <a
                 href={`mailto:${site.email}`}
-                className="mt-8 flex h-11 items-center justify-center bg-accent px-5 text-center text-xs font-medium uppercase tracking-widest text-white transition-all hover:-translate-y-0.5 hover:bg-accent-strong"
+                className="mt-8 flex h-12 items-center justify-center rounded-full bg-accent px-5 text-center text-xs font-medium uppercase tracking-widest text-white transition-all hover:-translate-y-0.5 hover:bg-accent-strong"
               >
                 Let&apos;s work together
               </a>

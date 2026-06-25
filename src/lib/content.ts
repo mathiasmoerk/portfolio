@@ -134,10 +134,11 @@ export const profile = {
   years: "5+ years",
   avatar: "/projects/mathias.jpg",
   bio: "I'm a product designer who turns complex flows into intuitive, pixel-perfect products. I work end to end: research, prototyping, and UI. Recently at Trifork, and before that LEGO, Vipps MobilePay, and Hesehus.",
-  actions: [
-    { label: "Get in touch", href: "/#contact", primary: true },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/mathias-mørk-541b09145" },
-  ],
+  // Single CTA in the hero card; "Get in touch" points to LinkedIn.
+  cta: {
+    label: "Get in touch",
+    href: "https://www.linkedin.com/in/mathias-mørk-541b09145",
+  },
 };
 
 // "Worked with" — logo files dropped into /public/companies (falls back to a

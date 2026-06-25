@@ -20,7 +20,7 @@ export default function Chip({
 }) {
   return (
     <span
-      className={`inline-flex items-center px-2.5 py-1 text-[11px] font-medium leading-none tracking-tight ring-1 ring-inset ${styles[color]}`}
+      className={`inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-medium leading-none tracking-tight ring-1 ring-inset ${styles[color]}`}
     >
       {children}
     </span>

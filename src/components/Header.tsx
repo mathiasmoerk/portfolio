@@ -42,14 +42,14 @@ export default function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="px-3 py-2 text-xs font-medium uppercase tracking-widest text-ink-soft transition-colors hover:text-ink"
+                className="rounded-full px-3 py-2 text-xs font-medium uppercase tracking-widest text-ink-soft transition-colors hover:bg-paper-2 hover:text-ink"
               >
                 {item.label}
               </a>
             ))}
             <a
               href="/#contact"
-              className="ml-2 inline-flex h-8 items-center justify-center bg-accent px-4 text-[11px] font-medium uppercase tracking-widest text-white transition-colors hover:bg-accent-strong"
+              className="ml-2 inline-flex h-8 items-center justify-center rounded-full bg-accent px-4 text-[11px] font-medium uppercase tracking-widest text-white transition-colors hover:bg-accent-strong"
             >
               Get in touch
             </a>
@@ -70,14 +70,14 @@ export default function Header() {
 
         {/* Menu surface, anchored above the FAB */}
         {open && (
-          <div className="menu-pop fixed bottom-28 right-5 z-50 w-80 max-w-[calc(100vw-2.5rem)] origin-bottom-right overflow-hidden border border-line bg-card p-3 shadow-[var(--shadow-lift)]">
+          <div className="menu-pop fixed bottom-28 right-5 z-50 w-80 max-w-[calc(100vw-2.5rem)] origin-bottom-right overflow-hidden rounded-3xl border border-line bg-card p-3 shadow-[var(--shadow-lift)]">
             <nav className="flex flex-col gap-1">
               {site.nav.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="flex min-h-16 items-center px-5 text-base font-medium uppercase tracking-widest text-ink-soft transition-colors hover:bg-paper-2 hover:text-ink"
+                  className="flex min-h-16 items-center rounded-2xl px-5 text-base font-medium uppercase tracking-widest text-ink-soft transition-colors hover:bg-paper-2 hover:text-ink"
                 >
                   {item.label}
                 </a>
@@ -85,7 +85,7 @@ export default function Header() {
               <a
                 href="/#contact"
                 onClick={() => setOpen(false)}
-                className="mt-1 flex min-h-16 items-center justify-center bg-accent px-5 text-center text-base font-medium uppercase tracking-widest text-white"
+                className="mt-1 flex min-h-16 items-center justify-center rounded-2xl bg-accent px-5 text-center text-base font-medium uppercase tracking-widest text-white"
               >
                 Get in touch
               </a>
@@ -99,7 +99,7 @@ export default function Header() {
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="fixed bottom-6 right-5 z-50 flex size-14 items-center justify-center bg-accent text-white shadow-[0_6px_16px_rgba(98,50,230,0.4),0_2px_6px_rgba(98,50,230,0.28)] transition-all duration-300 hover:bg-accent-strong hover:shadow-[0_10px_28px_rgba(98,50,230,0.5)] active:scale-95"
+          className="fixed bottom-6 right-5 z-50 flex size-14 items-center justify-center rounded-2xl bg-accent text-white shadow-[0_6px_16px_rgba(98,50,230,0.4),0_2px_6px_rgba(98,50,230,0.28)] transition-all duration-300 hover:bg-accent-strong hover:shadow-[0_10px_28px_rgba(98,50,230,0.5)] active:scale-95"
         >
           <span className="relative flex h-4 w-5 flex-col justify-between">
             <span

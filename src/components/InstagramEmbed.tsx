@@ -15,7 +15,7 @@ export default function InstagramEmbed({
 
   return (
     <div className="mx-auto w-full max-w-[400px]">
-      <div className="overflow-hidden border border-line bg-card shadow-[var(--shadow-card)]">
+      <div className="overflow-hidden rounded-3xl border border-line bg-card shadow-[var(--shadow-card)]">
         <iframe
           src={src}
           title={title}

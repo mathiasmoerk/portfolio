@@ -13,7 +13,7 @@ function WorkRow({ project }: { project: Project }) {
       }`}
     >
       {/* Thumbnail */}
-      <div className="overflow-hidden bg-paper-2">
+      <div className="overflow-hidden rounded-2xl bg-paper-2">
         <div className="aspect-video w-full transition-transform duration-500 group-hover:scale-[1.03]">
           {project.cover ? (
             <ProjectMedia

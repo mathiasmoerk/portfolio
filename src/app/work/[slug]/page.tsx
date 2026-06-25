@@ -78,7 +78,7 @@ export default async function CaseStudyPage({
 
         {/* Cover */}
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <div className="overflow-hidden bg-paper-2">
+          <div className="overflow-hidden rounded-2xl bg-paper-2">
             <div className="aspect-[16/10]">
               <ProjectMedia src={cs.cover.src} alt={cs.cover.alt} />
             </div>
@@ -87,7 +87,7 @@ export default async function CaseStudyPage({
 
         {/* Facts */}
         <section className="mx-auto max-w-4xl px-5 pt-16 sm:px-8">
-          <dl className="grid grid-cols-2 gap-x-6 gap-y-8 border-y border-line py-8 sm:grid-cols-4">
+          <dl className="grid grid-cols-2 gap-x-6 gap-y-8 rounded-2xl border border-line bg-card p-6 shadow-[var(--shadow-card)] sm:grid-cols-4 sm:p-8">
             {cs.facts.map((f) => (
               <div key={f.label}>
                 <dt className="font-mono text-[11px] uppercase tracking-widest text-muted">
@@ -137,7 +137,7 @@ export default async function CaseStudyPage({
                 "A mixed-methods approach where each study built on the last - so decisions stayed grounded in real behaviour, not assumptions."}
             </p>
 
-            <ol className="mt-12 space-y-px overflow-hidden border border-line bg-line">
+            <ol className="mt-12 space-y-px overflow-hidden rounded-2xl border border-line bg-line">
               {cs.process.map((step) => (
                 <li
                   key={step.phase}
@@ -163,7 +163,7 @@ export default async function CaseStudyPage({
         {/* Results / metrics */}
         {cs.metrics && (
           <section className="mx-auto max-w-6xl px-5 sm:px-8">
-            <div className="bg-ink px-6 py-10 text-paper sm:px-10 sm:py-12">
+            <div className="rounded-2xl bg-ink px-6 py-10 text-paper sm:px-10 sm:py-12">
               <p className="font-mono text-[11px] uppercase tracking-widest text-paper/50">
                 Results
               </p>
@@ -195,7 +195,7 @@ export default async function CaseStudyPage({
               "A high-fidelity prototype layering community features onto familiar workflows."}
           </p>
 
-          <ol className="mt-12 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2">
+          <ol className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
             {cs.features.map((f, i) => (
               <li key={f.title} className="flex flex-col bg-card p-6 sm:p-8">
                 <span className="font-mono text-sm text-muted">
@@ -284,7 +284,7 @@ export default async function CaseStudyPage({
         {/* Validation */}
         {cs.method && (
           <section className="mx-auto max-w-4xl px-5 pb-4 sm:px-8">
-            <div className="border-l-2 border-ink bg-paper-2/50 p-6 sm:p-10">
+            <div className="rounded-2xl border border-line bg-paper-2/50 p-6 sm:p-10">
               <p className="eyebrow">Validation</p>
               <p className="mt-5 text-[clamp(1.15rem,2.4vw,1.6rem)] font-medium leading-snug tracking-tight">
                 {cs.method}
@@ -347,7 +347,7 @@ function Figure({
 }) {
   return (
     <figure>
-      <div className="overflow-hidden bg-paper-2">
+      <div className="overflow-hidden rounded-2xl bg-paper-2">
         <div style={{ aspectRatio: ratio }}>
           <ProjectMedia src={figure.src} alt={figure.alt} />
         </div>
