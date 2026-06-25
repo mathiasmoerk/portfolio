@@ -78,7 +78,7 @@ export default async function CaseStudyPage({
 
         {/* Cover */}
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <div className="overflow-hidden rounded-3xl border border-line bg-paper-2 shadow-[var(--shadow-card)]">
+          <div className="overflow-hidden bg-paper-2">
             <div className="aspect-[16/10]">
               <ProjectMedia src={cs.cover.src} alt={cs.cover.alt} />
             </div>
@@ -87,7 +87,7 @@ export default async function CaseStudyPage({
 
         {/* Facts */}
         <section className="mx-auto max-w-4xl px-5 pt-16 sm:px-8">
-          <dl className="grid grid-cols-2 gap-x-6 gap-y-8 rounded-3xl border border-line bg-card p-6 shadow-[var(--shadow-card)] sm:grid-cols-4 sm:p-8">
+          <dl className="grid grid-cols-2 gap-x-6 gap-y-8 border-y border-line py-8 sm:grid-cols-4">
             {cs.facts.map((f) => (
               <div key={f.label}>
                 <dt className="font-mono text-[11px] uppercase tracking-widest text-muted">
@@ -120,7 +120,9 @@ export default async function CaseStudyPage({
 
         {/* Overview image (first gallery item) */}
         {cs.gallery[0] && (
-          <Figure figure={cs.gallery[0]} wide />
+          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+            <Figure figure={cs.gallery[0]} ratio="16 / 9" />
+          </div>
         )}
 
         {/* Process - studies / workstreams */}
@@ -128,14 +130,14 @@ export default async function CaseStudyPage({
           <section className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
             <p className="eyebrow">Process</p>
             <h2 className="display mt-4 text-[clamp(1.9rem,4.5vw,3rem)] font-semibold">
-              {cs.processHeading ?? "Five studies, each feeding the next."}
+              {cs.processHeading ?? "Five studies"}
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft">
               {cs.processLead ??
                 "A mixed-methods approach where each study built on the last - so decisions stayed grounded in real behaviour, not assumptions."}
             </p>
 
-            <ol className="mt-12 space-y-px overflow-hidden rounded-3xl border border-line bg-line">
+            <ol className="mt-12 space-y-px overflow-hidden border border-line bg-line">
               {cs.process.map((step) => (
                 <li
                   key={step.phase}
@@ -161,7 +163,7 @@ export default async function CaseStudyPage({
         {/* Results / metrics */}
         {cs.metrics && (
           <section className="mx-auto max-w-6xl px-5 sm:px-8">
-            <div className="rounded-3xl bg-ink px-6 py-10 text-paper sm:px-10 sm:py-12">
+            <div className="bg-ink px-6 py-10 text-paper sm:px-10 sm:py-12">
               <p className="font-mono text-[11px] uppercase tracking-widest text-paper/50">
                 Results
               </p>
@@ -186,14 +188,14 @@ export default async function CaseStudyPage({
         <section className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
           <p className="eyebrow">Key features</p>
           <h2 className="display mt-4 text-[clamp(1.9rem,4.5vw,3rem)] font-semibold">
-            {cs.featuresHeading ?? "Collaboration, woven into the catalog."}
+            {cs.featuresHeading ?? "Key features"}
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft">
             {cs.featuresLead ??
               "A high-fidelity prototype layering community features onto familiar workflows."}
           </p>
 
-          <ol className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2">
+          <ol className="mt-12 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2">
             {cs.features.map((f, i) => (
               <li key={f.title} className="flex flex-col bg-card p-6 sm:p-8">
                 <span className="font-mono text-sm text-muted">
@@ -216,7 +218,7 @@ export default async function CaseStudyPage({
           <section className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
             <p className="eyebrow">Grounded in</p>
             <h2 className="display mt-4 text-[clamp(1.9rem,4.5vw,3rem)] font-semibold">
-              {cs.principlesHeading ?? "Decisions backed by principle."}
+              {cs.principlesHeading ?? "Principles"}
             </h2>
             <ul className="mt-10 divide-y divide-line border-y border-line">
               {cs.principles.map((p) => (
@@ -234,14 +236,19 @@ export default async function CaseStudyPage({
           </section>
         )}
 
-        {/* Remaining gallery */}
-        <section className="mx-auto max-w-6xl px-5 pb-8 sm:px-8">
-          <div className="grid gap-6 sm:grid-cols-2">
-            {cs.gallery.slice(1).map((g) => (
-              <Figure key={g.src} figure={g} />
-            ))}
-          </div>
-        </section>
+        {/* Remaining gallery: first image full width, the rest two-up */}
+        {cs.gallery.length > 1 && (
+          <section className="mx-auto max-w-6xl px-5 pb-8 sm:px-8">
+            <Figure figure={cs.gallery[1]} ratio="16 / 9" />
+            {cs.gallery.length > 2 && (
+              <div className="mt-6 grid gap-6 sm:grid-cols-2">
+                {cs.gallery.slice(2).map((g) => (
+                  <Figure key={g.src} figure={g} ratio="4 / 3" />
+                ))}
+              </div>
+            )}
+          </section>
+        )}
 
         {/* Embedded social post (e.g. Instagram reel) */}
         {cs.embed && cs.embed.kind === "instagram" && (
@@ -277,7 +284,7 @@ export default async function CaseStudyPage({
         {/* Validation */}
         {cs.method && (
           <section className="mx-auto max-w-4xl px-5 pb-4 sm:px-8">
-            <div className="rounded-3xl border border-line bg-paper-2/50 p-6 sm:p-10">
+            <div className="border-l-2 border-ink bg-paper-2/50 p-6 sm:p-10">
               <p className="eyebrow">Validation</p>
               <p className="mt-5 text-[clamp(1.15rem,2.4vw,1.6rem)] font-medium leading-snug tracking-tight">
                 {cs.method}
@@ -333,22 +340,20 @@ export default async function CaseStudyPage({
 
 function Figure({
   figure,
-  wide = false,
+  ratio = "16 / 9",
 }: {
   figure: { src: string; alt: string; caption?: string };
-  wide?: boolean;
+  ratio?: string;
 }) {
   return (
-    <figure
-      className={`mx-auto px-5 sm:px-8 ${wide ? "max-w-6xl" : ""}`}
-    >
-      <div className="overflow-hidden rounded-3xl border border-line bg-paper-2 shadow-[var(--shadow-card)]">
-        <div className={wide ? "aspect-[16/9]" : "aspect-[4/3]"}>
+    <figure>
+      <div className="overflow-hidden bg-paper-2">
+        <div style={{ aspectRatio: ratio }}>
           <ProjectMedia src={figure.src} alt={figure.alt} />
         </div>
       </div>
       {figure.caption && (
-        <figcaption className="mt-3 font-mono text-xs text-muted">
+        <figcaption className="mt-3 text-xs text-muted">
           {figure.caption}
         </figcaption>
       )}

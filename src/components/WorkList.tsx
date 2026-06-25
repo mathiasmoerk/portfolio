@@ -8,12 +8,12 @@ function WorkRow({ project }: { project: Project }) {
   return (
     <a
       href={projectHref(project)}
-      className={`group grid grid-cols-1 gap-5 py-8 sm:grid-cols-[15rem_1fr] sm:gap-7 ${
+      className={`group grid grid-cols-1 gap-5 py-8 sm:grid-cols-[20rem_1fr] sm:gap-8 ${
         isLink ? "" : "cursor-default"
       }`}
     >
       {/* Thumbnail */}
-      <div className="overflow-hidden rounded-2xl border border-line bg-paper-2">
+      <div className="overflow-hidden bg-paper-2">
         <div className="aspect-video w-full transition-transform duration-500 group-hover:scale-[1.03]">
           {project.cover ? (
             <ProjectMedia
@@ -66,7 +66,7 @@ export default function WorkList() {
         Things I&apos;ve <span className="italic">shipped</span>.
       </h2>
 
-      <div className="mt-8 divide-y divide-line border-y border-line">
+      <div className="mt-8 flex flex-col gap-4">
         {projects.map((project) => (
           <WorkRow key={project.id} project={project} />
         ))}

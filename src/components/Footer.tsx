@@ -28,7 +28,7 @@ export default function Footer() {
               <a
                 key={s.label}
                 href={s.href}
-                className="inline-flex min-h-16 items-center rounded-full border border-paper/20 px-6 font-mono text-xs uppercase tracking-widest text-paper/80 transition-colors hover:border-accent hover:bg-accent hover:text-white"
+                className="inline-flex h-11 items-center border border-paper/20 px-6 text-xs font-medium uppercase tracking-widest text-paper/80 transition-colors hover:border-accent hover:bg-accent hover:text-white"
               >
                 {s.label}
               </a>

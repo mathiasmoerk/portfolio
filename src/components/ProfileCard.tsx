@@ -8,7 +8,7 @@ export default function ProfileCard() {
       id="top"
       className="mx-auto max-w-2xl px-5 pb-10 pt-10 sm:px-8 sm:pt-14"
     >
-      <div className="reveal relative overflow-hidden rounded-2xl border border-line bg-card p-6 shadow-[var(--shadow-card)] sm:p-8">
+      <div className="reveal relative overflow-hidden border border-line bg-card p-6 shadow-[var(--shadow-card)] sm:p-8">
         {/* Top row: avatar + actions */}
         <div className="flex items-start justify-between gap-4">
           <div className="size-[88px] shrink-0 overflow-hidden rounded-full border border-line bg-paper-2 sm:size-[120px]">
@@ -20,7 +20,7 @@ export default function ProfileCard() {
               <a
                 key={a.label}
                 href={a.href}
-                className={`inline-flex min-h-16 items-center justify-center rounded-full px-6 text-xs font-medium uppercase tracking-widest transition-all hover:-translate-y-0.5 ${
+                className={`inline-flex h-11 items-center justify-center px-6 text-xs font-medium uppercase tracking-widest transition-all hover:-translate-y-0.5 ${
                   a.primary
                     ? "bg-accent text-white hover:bg-accent-strong"
                     : "border border-accent/30 text-accent hover:bg-accent/5"

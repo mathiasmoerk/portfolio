@@ -97,9 +97,9 @@ export const site = {
   role: "Product Designer",
   email: "mathiasmoerk306@gmail.com",
   nav: [
-    { label: "Work", href: "#work" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Work", href: "/#work" },
+    { label: "About", href: "/#about" },
+    { label: "Contact", href: "/#contact" },
   ],
   social: [
     { label: "Email", href: "mailto:mathiasmoerk306@gmail.com" },
@@ -135,7 +135,7 @@ export const profile = {
   avatar: "/projects/mathias.jpg",
   bio: "I'm a product designer who turns complex flows into intuitive, pixel-perfect products. I work end to end: research, prototyping, and UI. Recently at Trifork, and before that LEGO, Vipps MobilePay, and Hesehus.",
   actions: [
-    { label: "Get in touch", href: "#contact", primary: true },
+    { label: "Get in touch", href: "/#contact", primary: true },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/mathias-mørk-541b09145" },
   ],
 };
@@ -324,7 +324,7 @@ export const projects: Project[] = [
         { label: "Period", value: "Aug - Oct 2024" },
         { label: "Scope", value: "Features & research" },
       ],
-      processHeading: "Three projects, idea toward production.",
+      processHeading: "Three projects",
       processLead:
         "I had the freedom to shape my own scope - which spanned a flagship feature, a cross-city research workshop, and a set of high-stakes refinements.",
       process: [
@@ -350,7 +350,7 @@ export const projects: Project[] = [
         { value: "2", label: "Workshop cities" },
         { value: "4", label: "Markets - DK·NO·SE·FI" },
       ],
-      principlesHeading: "Methods I brought to the work.",
+      principlesHeading: "Methods",
       principles: [
         {
           name: "Heuristic / expert evaluation",
@@ -451,7 +451,7 @@ export const projects: Project[] = [
         { label: "Period", value: "2024 - 2025" },
         { label: "Team", value: "LEGO Builder app" },
       ],
-      featuresHeading: "What I helped build.",
+      featuresHeading: "What I built",
       featuresLead:
         "Across the full UX spectrum - from workshops and research to pixel-tight UI in Figma.",
       features: [
@@ -528,7 +528,7 @@ export const about = {
     { value: "MSc", label: "Interaction design" },
   ],
   philosophy: [
-    "Design is everywhere. My job is turning complexity into experiences that feel just right.",
+    "Design is everywhere.",
     "I work at the intersection of user needs, business goals, and technical reality: research, prototyping, and pixel-perfect interfaces, built systems-first with cross-functional teams. The details are where it all comes together.",
   ],
   education: [
