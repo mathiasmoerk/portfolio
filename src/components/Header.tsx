@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { site } from "@/lib/content";
+import { profile, site } from "@/lib/content";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -48,7 +48,9 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="/#contact"
+              href={profile.cta.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-2 inline-flex h-8 items-center justify-center rounded-full bg-accent px-4 text-[11px] font-medium uppercase tracking-widest text-white transition-colors hover:bg-accent-strong"
             >
               Get in touch
@@ -83,7 +85,9 @@ export default function Header() {
                 </a>
               ))}
               <a
-                href="/#contact"
+                href={profile.cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="mt-1 flex min-h-16 items-center justify-center rounded-2xl bg-accent px-5 text-center text-base font-medium uppercase tracking-widest text-white"
               >
