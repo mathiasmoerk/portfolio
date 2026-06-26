@@ -32,9 +32,14 @@ function Logo({ name, logo }: { name: string; logo: string }) {
 
 export default function Companies() {
   return (
-    <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+    <div className="grid grid-cols-2 gap-2.5">
       {companies.map((c) => (
-        <Logo key={c.name} name={c.name} logo={c.logo} />
+        <div
+          key={c.name}
+          className="flex h-16 items-center justify-center rounded-xl border border-line bg-paper-2/50 px-4"
+        >
+          <Logo name={c.name} logo={c.logo} />
+        </div>
       ))}
     </div>
   );
