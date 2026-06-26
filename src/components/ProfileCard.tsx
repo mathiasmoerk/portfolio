@@ -6,7 +6,7 @@ export default function ProfileCard() {
   return (
     <section
       id="top"
-      className="mx-auto max-w-2xl px-5 pb-10 pt-10 sm:px-8 sm:pt-14"
+      className="mx-auto max-w-3xl px-5 pb-10 pt-10 sm:px-8 sm:pt-14"
     >
       <div className="reveal relative overflow-hidden rounded-3xl border border-line bg-card p-6 shadow-[var(--shadow-card)] sm:p-8">
         {/* Avatar */}
